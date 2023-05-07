@@ -1,24 +1,21 @@
 void main() {
-  final idol = Idol('Nogizaka46', 46);
-  idol.printIdol();
+  Idol wonjang = Idol();
 
-  final idol2 = Idol.fromMap({'name': 'Keyakizaka46', 'membersCount': 21});
-  idol2.printIdol();
+  print(wonjang.name);
+
+  wonjang.name = "GG";
+
+  print(wonjang.name);
 }
 
 class Idol {
-  final String name;
-  final int membersCount;
+  String _name = "wonjang";
 
-  Idol(String name, int membersCount)
-      : this.name = name,
-        this.membersCount = membersCount;
+  String get name {
+    return _name;
+  }
 
-  Idol.fromMap(Map<String, dynamic> map)
-      : this.name = map['name'],
-        this.membersCount = map['membersCount'];
-
-  void printIdol() {
-    print('Idol name: $name, members count: $membersCount');
+  set name(String name) {
+    _name = name;
   }
 }
