@@ -1,21 +1,23 @@
+import 'package:flutter/material.dart';
+
 void main() {
-  Idol wonjang = Idol();
-
-  print(wonjang.name);
-
-  wonjang.name = "GG";
-
-  print(wonjang.name);
+  runApp(const MyApp());
 }
 
-class Idol {
-  String _name = "wonjang";
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+  static const String _title = 'Flutter Code Sample';
 
-  String get name {
-    return _name;
-  }
-
-  set name(String name) {
-    _name = name;
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: _title,
+      home: Scaffold(
+        appBar: AppBar(title: const Text(_title)),
+        body: const Center(
+          child: Text('Hello World'),
+        ),
+      ),
+    );
   }
 }
